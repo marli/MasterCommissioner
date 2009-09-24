@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090924044359) do
+ActiveRecord::Schema.define(:version => 20090924060602) do
 
   create_table "addresses", :force => true do |t|
     t.string   "street_line_1"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(:version => 20090924044359) do
     t.string   "zip"
     t.string   "lat"
     t.string   "long"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "websites", :force => true do |t|
+    t.string   "webaddress"
+    t.string   "parse_info"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

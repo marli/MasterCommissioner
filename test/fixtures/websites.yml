@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  webaddress: MyString
+  parse_info: MyString
+
+two:
+  webaddress: MyString
+  parse_info: MyString

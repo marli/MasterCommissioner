@@ -802,3 +802,425 @@ Processing AddressesController#index (for 127.0.0.1 at 2009-09-24 01:50:17) [GET
 Rendering template within layouts/addresses
 Rendering addresses/index
 Completed in 66ms (View: 25, DB: 2) | 200 OK [http://localhost/addresses]
+  [4;36;1mSQL (1.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateAddresses (20090924044359)
+Migrating to CreateWebsites (20090924060602)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE TABLE "websites" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "webaddress" varchar(255), "parse_info" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090924060602')[0m
+  [4;35;1mSQL (1.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("addresses")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("websites")[0m
+
+
+Processing AddressesController#index (for 127.0.0.1 at 2009-09-24 02:06:38) [GET]
+  [4;36;1mAddress Load (2.8ms)[0m   [0;1mSELECT * FROM "addresses" [0m
+Rendering template within layouts/addresses
+Rendering addresses/index
+Completed in 65ms (View: 35, DB: 3) | 200 OK [http://localhost/addresses]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-24 02:06:45) [GET]
+
+MissingSourceFile (no such file to load -- nokogiri):
+  app/controllers/websites_controller.rb:3
+
+Rendered rescues/_trace (182.4ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WebsitesController#index (for 127.0.0.1 at 2009-09-24 02:07:12) [GET]
+  [4;36;1mWebsite Load (1.3ms)[0m   [0;1mSELECT * FROM "websites" [0m
+Rendering template within layouts/websites
+Rendering websites/index
+Completed in 54ms (View: 35, DB: 1) | 200 OK [http://localhost/websites]
+
+
+Processing WebsitesController#show (for 127.0.0.1 at 2009-09-24 02:11:42) [GET]
+  Parameters: {"id"=>"fayette_mc"}
+  [4;35;1mWebsite Load (0.6ms)[0m   [0mSELECT * FROM "websites" WHERE ("websites"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Website with ID=fayette_mc):
+  app/controllers/websites_controller.rb:24:in `show'
+
+Rendered rescues/_trace (160.4ms)
+Rendered rescues/_request_and_response (4.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing WebsitesController#fayette_mc (for 127.0.0.1 at 2009-09-24 02:13:18) [GET]
+
+Nokogiri::CSS::SyntaxError (unexpected '<' after ''):
+  nokogiri (1.3.3) lib/nokogiri/css/parser.rb:78:in `on_error'
+  racc/parser.rb:99:in `_racc_do_parse_c'
+  racc/parser.rb:99:in `__send__'
+  racc/parser.rb:99:in `do_parse'
+  nokogiri (1.3.3) lib/nokogiri/css/generated_tokenizer.rb:30:in `parse'
+  nokogiri (1.3.3) lib/nokogiri/css/parser.rb:70:in `xpath_for'
+  nokogiri (1.3.3) lib/nokogiri/css.rb:21:in `xpath_for'
+  nokogiri (1.3.3) lib/nokogiri/xml/node.rb:99:in `search'
+  nokogiri (1.3.3) lib/nokogiri/xml/node.rb:97:in `map'
+  nokogiri (1.3.3) lib/nokogiri/xml/node.rb:97:in `search'
+  app/controllers/websites_controller.rb:7:in `fayette_mc'
+
+Rendered rescues/_trace (301.1ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WebsitesController#fayette_mc (for 127.0.0.1 at 2009-09-24 02:13:46) [GET]
+
+Nokogiri::CSS::SyntaxError (unexpected '=' after '#<Nokogiri::CSS::Node:0xb5efdfc0>'):
+  nokogiri (1.3.3) lib/nokogiri/css/parser.rb:78:in `on_error'
+  racc/parser.rb:99:in `_racc_do_parse_c'
+  racc/parser.rb:99:in `__send__'
+  racc/parser.rb:99:in `do_parse'
+  nokogiri (1.3.3) lib/nokogiri/css/generated_tokenizer.rb:30:in `parse'
+  nokogiri (1.3.3) lib/nokogiri/css/parser.rb:70:in `xpath_for'
+  nokogiri (1.3.3) lib/nokogiri/css.rb:21:in `xpath_for'
+  nokogiri (1.3.3) lib/nokogiri/xml/node.rb:99:in `search'
+  nokogiri (1.3.3) lib/nokogiri/xml/node.rb:97:in `map'
+  nokogiri (1.3.3) lib/nokogiri/xml/node.rb:97:in `search'
+  app/controllers/websites_controller.rb:7:in `fayette_mc'
+
+Rendered rescues/_trace (273.2ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WebsitesController#fayette_mc (for 127.0.0.1 at 2009-09-24 02:14:06) [GET]
+Rendering template within layouts/websites
+Rendering websites/fayette_mc
+Completed in 2061ms (View: 21, DB: 0) | 200 OK [http://localhost/websites/fayette_mc]
+
+
+Processing WebsitesController#fayette_mc (for 127.0.0.1 at 2009-09-24 02:14:50) [GET]
+Rendering template within layouts/websites
+Rendering websites/fayette_mc
+Completed in 1962ms (View: 5, DB: 0) | 200 OK [http://localhost/websites/fayette_mc]
+
+
+Processing WebsitesController#fayette_mc (for 127.0.0.1 at 2009-09-24 02:15:11) [GET]
+Rendering template within layouts/websites
+Rendering websites/fayette_mc
+Completed in 2036ms (View: 5, DB: 0) | 200 OK [http://localhost/websites/fayette_mc]
+
+
+Processing WebsitesController#fayette_mc (for 127.0.0.1 at 2009-09-24 02:15:23) [GET]
+Rendering template within layouts/websites
+Rendering websites/fayette_mc
+Completed in 2004ms (View: 4, DB: 0) | 200 OK [http://localhost/websites/fayette_mc]
+
+
+Processing WebsitesController#fayette_mc (for 127.0.0.1 at 2009-09-24 02:17:49) [GET]
+Rendering template within layouts/websites
+Rendering websites/fayette_mc
+Completed in 2987ms (View: 6, DB: 0) | 200 OK [http://localhost/websites/fayette_mc]
+
+
+Processing WebsitesController#fayette_mc (for 127.0.0.1 at 2009-09-24 02:18:03) [GET]
+Rendering template within layouts/websites
+Rendering websites/fayette_mc
+Completed in 3189ms (View: 4, DB: 0) | 200 OK [http://localhost/websites/fayette_mc]
+
+
+Processing WebsitesController#fayette_mc (for 127.0.0.1 at 2009-09-24 02:18:19) [GET]
+Rendering template within layouts/websites
+Rendering websites/fayette_mc
+Completed in 1964ms (View: 4, DB: 0) | 200 OK [http://localhost/websites/fayette_mc]
+
+
+Processing WebsitesController#fayette_mc (for 127.0.0.1 at 2009-09-24 02:18:29) [GET]
+Rendering template within layouts/websites
+Rendering websites/fayette_mc
+Completed in 2133ms (View: 5, DB: 0) | 200 OK [http://localhost/websites/fayette_mc]
+
+
+Processing WebsitesController#fayette_mc (for 127.0.0.1 at 2009-09-24 02:18:41) [GET]
+Rendering template within layouts/websites
+Rendering websites/fayette_mc
+Completed in 2095ms (View: 4, DB: 0) | 200 OK [http://localhost/websites/fayette_mc]
+
+
+Processing WebsitesController#fayette_mc (for 127.0.0.1 at 2009-09-24 02:19:56) [GET]
+Rendering template within layouts/websites
+Rendering websites/fayette_mc
+Completed in 1970ms (View: 5, DB: 0) | 200 OK [http://localhost/websites/fayette_mc]
+
+
+Processing WebsitesController#fayette_mc (for 127.0.0.1 at 2009-09-24 02:20:49) [GET]
+Rendering template within layouts/websites
+Rendering websites/fayette_mc
+Completed in 2000ms (View: 5, DB: 0) | 200 OK [http://localhost/websites/fayette_mc]
+
+
+Processing WebsitesController#fayette_mc (for 127.0.0.1 at 2009-09-24 02:22:28) [GET]
+  [4;36;1mAddress Create (3.2ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:31', NULL, '2009-09-24 06:22:31', '3601 FOX FUN ROAD', 37.972443, 'Ky', -84.488779)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:32', NULL, '2009-09-24 06:22:32', '133 ASHTON DRIVE', 38.040781, 'Ky', -84.456241)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:33', NULL, '2009-09-24 06:22:33', '209 SADDLEBRED COURT', 38.078379, 'Ky', -84.550537)[0m
+  [4;35;1mAddress Create (1.1ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:33', NULL, '2009-09-24 06:22:33', '889 GERARDI ROAD', 38.024964, 'Ky', -84.435906)[0m
+  [4;36;1mAddress Create (0.8ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:34', NULL, '2009-09-24 06:22:34', '4748 BOCA LANE', 37.952486, 'Ky', -84.507328)[0m
+  [4;35;1mAddress Create (0.9ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:34', NULL, '2009-09-24 06:22:34', '408 JOSEPH BRYAN WAY', 37.973555, 'Ky', -84.540212)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:35', NULL, '2009-09-24 06:22:35', '705 SELF AVENUE', 38.066925, 'Ky', -84.504488)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:35', NULL, '2009-09-24 06:22:35', '2233 BELMONT DRIVE', 38.070893, 'Ky', -84.444369)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:36', NULL, '2009-09-24 06:22:36', '645 SHERIDAN DRIVE', 38.020774, 'Ky', -84.536757)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:36', NULL, '2009-09-24 06:22:36', '874 JAIRUS DRIVE', 37.958875, 'Ky', -84.494701)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:37', NULL, '2009-09-24 06:22:37', '510 W. MAXWELL STREET', 38.046926, 'Ky', -84.505514)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:37', NULL, '2009-09-24 06:22:37', '2877 ARK ROYAL WAY', 38.005671, 'Ky', -84.532323)[0m
+  [4;36;1mAddress Create (0.8ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:38', NULL, '2009-09-24 06:22:38', '149 CARLISLE AVENUE', 38.060162, 'Ky', -84.474554)[0m
+  [4;35;1mAddress Create (0.9ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:38', NULL, '2009-09-24 06:22:38', '4013 EXPO COURT', 37.970816, 'Ky', -84.522174)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:39', NULL, '2009-09-24 06:22:39', '2304 LONAN COURT', 38.0973347, 'Ky', -84.5243867)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:39', NULL, '2009-09-24 06:22:39', '421 REDDING ROAD #82', 37.985306, 'Ky', -84.498038)[0m
+  [4;36;1mAddress Create (0.8ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:40', NULL, '2009-09-24 06:22:40', '661 GALATA DRIVE', 38.0084193, 'Ky', -84.5446764)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:41', NULL, '2009-09-24 06:22:41', '901 HIGHLAND DRIVE', 38.044299, 'Ky', -84.47044)[0m
+  [4;36;1mAddress Create (0.9ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:41', NULL, '2009-09-24 06:22:41', '4000 EXPO COURT', 37.971597, 'Ky', -84.522726)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:42', NULL, '2009-09-24 06:22:42', '923 DELAWARE AVENUE', 38.040334, 'Ky', -84.472593)[0m
+  [4;36;1mAddress Create (1.0ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:42', NULL, '2009-09-24 06:22:42', '606 WAXWING WAY FKA 604-B WAXWING WAY', 37.97655, 'Ky', -84.50042)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:43', NULL, '2009-09-24 06:22:43', '488 SEELEY DRIVE', 38.008135, 'Ky', -84.472323)[0m
+  [4;36;1mAddress Create (1.0ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:43', NULL, '2009-09-24 06:22:43', '224 OWSLEY AVENUE', 38.034718, 'Ky', -84.47565)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:44', NULL, '2009-09-24 06:22:44', '681 ROSEWOOD DRIVE', 38.05784, 'Ky', -84.441168)[0m
+  [4;36;1mAddress Create (0.9ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:44', NULL, '2009-09-24 06:22:44', '3682 POLO CLUB BOULEVARD', 38.0010898, 'Ky', -84.39666)[0m
+  [4;35;1mAddress Create (0.8ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:45', NULL, '2009-09-24 06:22:45', '2016 MARK AVENUE', 38.091048, 'Ky', -84.505196)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:45', NULL, '2009-09-24 06:22:45', '4353 RIVER OAK TRAIL', 37.962818, 'Ky', -84.520279)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:46', NULL, '2009-09-24 06:22:46', '3145 COMANCHE TRAIL', 38.0060213, 'Ky', -84.5581213)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:46', NULL, '2009-09-24 06:22:46', '1032 RUSSELL CAVE ROAD', 38.063939, 'Ky', -84.483766)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:47', NULL, '2009-09-24 06:22:47', '3505 GALT COURT', 37.970047, 'Ky', -84.470089)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:48', NULL, '2009-09-24 06:22:48', '205 CHENAULT ROAD', 38.026146, 'Ky', -84.485168)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:48', NULL, '2009-09-24 06:22:48', '1092 TATESBROOK DRIVE', 37.974326, 'Ky', -84.490814)[0m
+  [4;36;1mAddress Create (0.8ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:49', NULL, '2009-09-24 06:22:49', '558 PARKSIDE DRIVE', 38.08362, 'Ky', -84.455842)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:49', NULL, '2009-09-24 06:22:49', '328 LUCILLE DRIVE', 38.090705, 'Ky', -84.544494)[0m
+  [4;36;1mAddress Create (1.0ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:50', NULL, '2009-09-24 06:22:50', '3441 LAREDO DRIVE #39', 37.9866729, 'Ky', -84.5079639)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:50', NULL, '2009-09-24 06:22:50', '3208 MT. FORAKER DRIVE', 37.979193, 'Ky', -84.461491)[0m
+  [4;36;1mAddress Create (0.9ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:51', NULL, '2009-09-24 06:22:51', '576 MERRIMAC DRIVE A/K/A 3433 TISDALE DRIVE', 37.9892844, 'Ky', -84.5509645)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:51', NULL, '2009-09-24 06:22:51', '826 WARFIELD PLACE', 38.051088, 'Ky', -84.472501)[0m
+  [4;36;1mAddress Create (1.0ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:52', NULL, '2009-09-24 06:22:52', '102 CHELAN DRIVE', 38.020102, 'Ky', -84.521831)[0m
+  [4;35;1mAddress Create (0.8ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:53', NULL, '2009-09-24 06:22:53', '823 JAIRUS DRIVE', 37.957444, 'Ky', -84.496797)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:53', NULL, '2009-09-24 06:22:53', '3711 TRENT CIRCLE', 37.97012, 'Ky', -84.482046)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:54', NULL, '2009-09-24 06:22:54', '3204 BLEDSOE PLACE', 38.0248875, 'Ky', -84.3977908)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:54', NULL, '2009-09-24 06:22:54', '3838 NORTHAMPTON DRIVE', 37.975405, 'Ky', -84.51936)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:55', NULL, '2009-09-24 06:22:55', '115 PINE OAK DRIVE', 38.021493, 'Ky', -84.523539)[0m
+  [4;36;1mAddress Create (1.0ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:55', NULL, '2009-09-24 06:22:55', '164 BLACK WATER LANE', 38.084495, 'Ky', -84.55664)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:56', NULL, '2009-09-24 06:22:56', '3358 PIMLICO PARKWAY', 37.988828, 'Ky', -84.473559)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:56', NULL, '2009-09-24 06:22:56', '3244 SCOTTISH TRACE', 38.021904, 'Ky', -84.398788)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:57', NULL, '2009-09-24 06:22:57', '293 SOUTH ASHLAND AVENUE', 38.031621, 'Ky', -84.490052)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:57', NULL, '2009-09-24 06:22:57', '720 PIONEER LANE', 38.04024, 'Ky', -84.465221)[0m
+  [4;35;1mAddress Create (1.1ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:58', NULL, '2009-09-24 06:22:58', '916 APPLECROSS DRIVE', 38.0965227, 'Ky', -84.5239721)[0m
+  [4;36;1mAddress Create (1.0ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:59', NULL, '2009-09-24 06:22:59', '1440 HARTLAND WOODS WAY', 37.964272, 'Ky', -84.479229)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:22:59', NULL, '2009-09-24 06:22:59', '1712 PALMYRA AVENUE', 38.072765, 'Ky', -84.469896)[0m
+  [4;36;1mAddress Create (1.0ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:00', NULL, '2009-09-24 06:23:00', '201 SAVOY ROAD', 38.053193, 'Ky', -84.538217)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:01', NULL, '2009-09-24 06:23:01', '1758 GETTYSBURG ROAD', 38.037916, 'Ky', -84.542277)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:01', NULL, '2009-09-24 06:23:01', '1035 LIBERTY ROAD', 38.040049, 'Ky', -84.467151)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:02', NULL, '2009-09-24 06:23:02', '241 CAMPSIE PLACE', 38.048259, 'Ky', -84.488374)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:02', NULL, '2009-09-24 06:23:02', '2925 SANDERSVILLE ROAD', 38.1000196, 'Ky', -84.5398045)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:03', NULL, '2009-09-24 06:23:03', '3572 BOSTON ROAD', 37.9831142, 'Ky', -84.5495422)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:03', NULL, '2009-09-24 06:23:03', '2416 CORONEO LANE', 38.0330345, 'Ky', -84.4258178)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:04', NULL, '2009-09-24 06:23:04', '4852 CLIFFORD CIRCLE AKA 3941 KENESAW DRIVE', 37.959072, 'Ky', -84.4817889)[0m
+  [4;36;1mAddress Create (0.9ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:05', NULL, '2009-09-24 06:23:05', '782 BENNETT AVENUE', 38.046836, 'Ky', -84.518356)[0m
+  [4;35;1mAddress Create (0.9ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:05', NULL, '2009-09-24 06:23:05', '1149 LANE ALLEN ROAD', 38.0359542, 'Ky', -84.5610397)[0m
+  [4;36;1mAddress Create (1.0ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:06', NULL, '2009-09-24 06:23:06', '1566 BLUEBIRD LANE', 38.026837, 'Ky', -84.517928)[0m
+  [4;35;1mAddress Create (0.8ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:07', NULL, '2009-09-24 06:23:07', '718 BISKOFF COURT', 38.088964, 'Ky', -84.460786)[0m
+  [4;36;1mAddress Create (0.8ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:07', NULL, '2009-09-24 06:23:07', '1056-1058 FONTAINE ROAD', 38.0283422, 'Ky', -84.4875738)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:08', NULL, '2009-09-24 06:23:08', '841 SUNNY SLOPE TRACE', 37.97159, 'Ky', -84.549829)[0m
+  [4;36;1mAddress Create (0.8ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:08', NULL, '2009-09-24 06:23:08', '617 WALDO WAY', 38.081426, 'Ky', -84.466965)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:09', NULL, '2009-09-24 06:23:09', '2052 TWAIN RIDGE DRIVE', 37.990444, 'Ky', -84.579816)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:09', NULL, '2009-09-24 06:23:09', '116 GOODRICH AVENUE', 38.013735, 'Ky', -84.518364)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:10', NULL, '2009-09-24 06:23:10', '3001 OLD HOUSE ROAD', 38.021384, 'Ky', -84.407893)[0m
+  [4;36;1mAddress Create (1.0ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:10', NULL, '2009-09-24 06:23:10', '412, 420, 416-418 MARQUIS AVENUE & 465 A ASHLAND TERRACE', 38.030532, 'Ky', -84.494358)[0m
+  [4;35;1mAddress Create (0.8ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:11', NULL, '2009-09-24 06:23:11', '520-522 SAYRE AVENUE', 38.0393114, 'Ky', -84.4872221)[0m
+  [4;36;1mAddress Create (0.8ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:12', NULL, '2009-09-24 06:23:12', '105 WALLACE COURT', 37.989348, 'Ky', -84.523794)[0m
+  [4;35;1mAddress Create (0.9ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:12', NULL, '2009-09-24 06:23:12', '324 ASHMOOR DRIVE', 37.961522, 'Ky', -84.5257)[0m
+  [4;36;1mAddress Create (1.0ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:13', NULL, '2009-09-24 06:23:13', '221 LOWRY LANE A/K/A 221 E. LOWRY LANE', 38.004154, 'Ky', -84.51216)[0m
+  [4;35;1mAddress Create (0.8ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:13', NULL, '2009-09-24 06:23:13', '329 PRESTON AVENUE', 38.035425, 'Ky', -84.472039)[0m
+  [4;36;1mAddress Create (1.0ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:14', NULL, '2009-09-24 06:23:14', '3309 VALWOOD COURT', 37.973977, 'Ky', -84.465672)[0m
+  [4;35;1mAddress Create (0.9ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:14', NULL, '2009-09-24 06:23:14', '500 LAKETOWER DRIVE , NO. 4', 38.0092715, 'Ky', -84.4701235)[0m
+  [4;36;1mAddress Create (0.9ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:15', NULL, '2009-09-24 06:23:15', '1208 YORKSHIRE COURT', 37.962085, 'Ky', -84.485503)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:16', NULL, '2009-09-24 06:23:16', '3637 GRACE DRIVE', 37.974531, 'Ky', -84.481361)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:16', NULL, '2009-09-24 06:23:16', '1101 FOUR WYNDS TRAIL', 37.958595, 'Ky', -84.490841)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:17', NULL, '2009-09-24 06:23:17', '347 SOUTH UPPER STREET', 38.045224, 'Ky', -84.501335)[0m
+  [4;36;1mAddress Create (1.0ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:17', NULL, '2009-09-24 06:23:17', '3452 SUTHERLAND DRIVE', 37.9874543, 'Ky', -84.4822627)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:18', NULL, '2009-09-24 06:23:18', '1099 DUVAL STREET', 37.9655378, 'Ky', -84.4957442)[0m
+  [4;36;1mAddress Create (1.0ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:18', NULL, '2009-09-24 06:23:18', '1097 DUVAL STREET', 37.9654519, 'Ky', -84.4959791)[0m
+  [4;35;1mAddress Create (0.8ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:19', NULL, '2009-09-24 06:23:19', '3636 SUNDART DRIVE', 37.973971, 'Ky', -84.473881)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:19', NULL, '2009-09-24 06:23:19', '1877 CHARLBURY COURT', 38.082992, 'Ky', -84.465637)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:20', NULL, '2009-09-24 06:23:20', '4548 SARON DRIVE', 37.956164, 'Ky', -84.4963652)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:21', NULL, '2009-09-24 06:23:21', '708 CLAYVIS COURT', 37.962799, 'Ky', -84.506283)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:21', NULL, '2009-09-24 06:23:21', '405 SQUIRES ROAD', 37.9896107, 'Ky', -84.4485647)[0m
+  [4;36;1mAddress Create (1.1ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:22', NULL, '2009-09-24 06:23:22', '359 SOUTH UPPER STREET', 38.04505, 'Ky', -84.501586)[0m
+  [4;35;1mAddress Create (0.8ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:23', NULL, '2009-09-24 06:23:23', '3510 SUTHERLAND DRIVE', 37.985967, 'Ky', -84.483193)[0m
+  [4;36;1mAddress Create (0.8ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:23', NULL, '2009-09-24 06:23:23', '2072 STONEWOOD LANE A/K/A 2200 ARTHUR WAY', 38.029667, 'Ky', -84.4443178)[0m
+  [4;35;1mAddress Create (0.8ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:24', NULL, '2009-09-24 06:23:24', '2348 LONAN COURT', 38.0971455, 'Ky', -84.525572)[0m
+  [4;36;1mAddress Create (1.0ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:24', NULL, '2009-09-24 06:23:24', '2545 CHECKERBERRY DRIVE A/K/A 601 HUGGING BEAR DRIVE', 38.017665, 'Ky', -84.440824)[0m
+  [4;35;1mAddress Create (1.1ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:25', NULL, '2009-09-24 06:23:25', '4740 INMAN DRIVE', 37.993438, 'Ky', -84.595164)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:25', NULL, '2009-09-24 06:23:25', '1033 WYNDHAM HILLS DRIVE', 37.97622, 'Ky', -84.562419)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:26', NULL, '2009-09-24 06:23:26', '912 WHITNEY AVENUE', 38.061993, 'Ky', -84.50621)[0m
+  [4;36;1mAddress Create (0.9ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:26', NULL, '2009-09-24 06:23:26', '2840 WINTER PARK DRIVE', 37.993422, 'Ky', -84.456829)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:27', NULL, '2009-09-24 06:23:27', '1824 TRAVELLER ROAD', 38.03612, 'Ky', -84.553758)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:28', NULL, '2009-09-24 06:23:28', '396 MASTERSON STATION DRIVE', 38.09398, 'Ky', -84.541204)[0m
+  [4;35;1mAddress Create (0.8ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:28', NULL, '2009-09-24 06:23:28', '214 MOUSAS WAY', 38.010863, 'Ky', -84.449465)[0m
+  [4;36;1mAddress Create (0.9ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:29', NULL, '2009-09-24 06:23:29', '3975 LEMONS MILL ROAD', 38.1790508, 'Ky', -84.48166)[0m
+  [4;35;1mAddress Create (0.8ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:29', NULL, '2009-09-24 06:23:29', '423 PRICE ROAD', 38.068569, 'Ky', -84.508491)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:30', NULL, '2009-09-24 06:23:30', '2251 STONEWOOD LANE', 38.028883, 'Ky', -84.437335)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:30', NULL, '2009-09-24 06:23:30', '1090 LAKEWOOD DRIVE', 38.01745, 'Ky', -84.491165)[0m
+  [4;36;1mAddress Create (1.0ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:31', NULL, '2009-09-24 06:23:31', '920 DE PORRES AVENUE', 38.07011, 'Ky', -84.507976)[0m
+  [4;35;1mAddress Create (0.9ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:32', NULL, '2009-09-24 06:23:32', '1405 JOCASTA DRIVE', 37.979865, 'Ky', -84.467801)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:32', NULL, '2009-09-24 06:23:32', '224 LONDONDERRY DRIVE', 38.054886, 'Ky', -84.537741)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:33', NULL, '2009-09-24 06:23:33', '708 STANSBERRY COVE', 37.983452, 'Ky', -84.403521)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:33', NULL, '2009-09-24 06:23:33', '2061 AND 2063 TAMMY COURT', 38.0942569, 'Ky', -84.4769794)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:34', NULL, '2009-09-24 06:23:34', '1280 NICE DRIVE', 38.051396, 'Ky', -84.557532)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:34', NULL, '2009-09-24 06:23:34', '928 MEADOW LANE', 38.051027, 'Ky', -84.465835)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:35', NULL, '2009-09-24 06:23:35', '3717 TRENT CIRCLE', 37.969971, 'Ky', -84.482125)[0m
+  [4;36;1mAddress Create (0.9ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:35', NULL, '2009-09-24 06:23:35', '2208 BONHAVEN ROAD', 37.95306, 'Ky', -84.477786)[0m
+  [4;35;1mAddress Create (1.1ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:36', NULL, '2009-09-24 06:23:36', '5061 MAGNOLIA GARDENS PLACE', 37.944639, 'Ky', -84.487426)[0m
+  [4;36;1mAddress Create (0.9ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:37', NULL, '2009-09-24 06:23:37', '750 SHAKER DRIVE UNIT 908', 38.0314484, 'Ky', -84.5290277)[0m
+  [4;35;1mAddress Create (1.1ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:37', NULL, '2009-09-24 06:23:37', '247 EAGLE CREEK AKA 247 SOUTH EAGLE CREEK DRIVE', 37.996033, 'Ky', -84.448648)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:38', NULL, '2009-09-24 06:23:38', '1661 MARGATE DRIVE', 38.057836, 'Ky', -84.460238)[0m
+  [4;35;1mAddress Create (0.9ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:38', NULL, '2009-09-24 06:23:38', '2500 RIDGEFIELD LANE AKA 2525 FLYING EBONY DRIVE', 38.0229117, 'Ky', -84.4324346)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:39', NULL, '2009-09-24 06:23:39', '1220 KANNAPOLIS PLACE', 38.019992, 'Ky', -84.568782)[0m
+  [4;35;1mAddress Create (0.9ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:39', NULL, '2009-09-24 06:23:39', '3532 KING ARTHUR DRIVE', 37.98336, 'Ky', -84.511776)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:40', NULL, '2009-09-24 06:23:40', '1436 MT. RAINIER DRIVE', 37.979614, 'Ky', -84.465695)[0m
+  [4;35;1mAddress Create (0.9ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:40', NULL, '2009-09-24 06:23:40', '2012 DEAUVILLE DRIVE', 38.052332, 'Ky', -84.545962)[0m
+  [4;36;1mAddress Create (0.8ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:41', NULL, '2009-09-24 06:23:41', '169 LOUISIANA AVENUE', 38.023564, 'Ky', -84.484952)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:41', NULL, '2009-09-24 06:23:41', '1083 REDWOOD DRIVE', 38.082944, 'Ky', -84.502256)[0m
+  [4;36;1mAddress Create (0.8ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:42', NULL, '2009-09-24 06:23:42', '3966 NORTHAMPTON DRIVE', 37.974112, 'Ky', -84.516124)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:43', NULL, '2009-09-24 06:23:43', '2041 CORIANDER LANE', 38.048682, 'Ky', -84.42898)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:44', NULL, '2009-09-24 06:23:44', '353 LINCOLN AVENUE FORMERLY LINCOLN STREET', 38.033581, 'Ky', -84.476109)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:44', NULL, '2009-09-24 06:23:44', '512 MCCUBBING DRIVE', 38.027551, 'Ky', -84.526814)[0m
+  [4;36;1mAddress Create (1.0ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:45', NULL, '2009-09-24 06:23:45', '922 IDLEWILD COURT', 38.052957, 'Ky', -84.473457)[0m
+  [4;35;1mAddress Create (0.9ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:45', NULL, '2009-09-24 06:23:45', '2296 SPURR ROAD', 38.103846, 'Ky', -84.510619)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:46', NULL, '2009-09-24 06:23:46', '1780 COSTIGAN DRIVE', 38.089226, 'Ky', -84.4821)[0m
+  [4;35;1mAddress Create (0.9ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:47', NULL, '2009-09-24 06:23:47', '701 BELLAIRE AVENUE', 38.060887, 'Ky', -84.490294)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:47', NULL, '2009-09-24 06:23:47', '767 ALLENDALE DRIVE', 38.028866, 'Ky', -84.535826)[0m
+  [4;35;1mAddress Create (0.8ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:48', NULL, '2009-09-24 06:23:48', '481 SKYVIEW LANE', 38.0960859, 'Ky', -84.5411016)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:48', NULL, '2009-09-24 06:23:48', '604 IVY COURT', 38.059215, 'Ky', -84.441721)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:49', NULL, '2009-09-24 06:23:49', '1296 KENNECOTT WAY', 37.9861177, 'Ky', -84.563213)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:49', NULL, '2009-09-24 06:23:49', '561 JUDY LANE', 38.082109, 'Ky', -84.456485)[0m
+  [4;35;1mAddress Create (1.1ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:50', NULL, '2009-09-24 06:23:50', '1705 BRYAN STATION PIKE AKA 1705 BRYAN STATION ROAD', 38.061393, 'Ky', -84.462107)[0m
+  [4;36;1mAddress Create (0.8ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:50', NULL, '2009-09-24 06:23:50', '1910 WESTMINSTER DRIVE', 38.050752, 'Ky', -84.541872)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:51', NULL, '2009-09-24 06:23:51', '422 Elm Street', 38.061931, 'Ky', -84.503025)[0m
+  [4;36;1mAddress Create (1.0ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:52', NULL, '2009-09-24 06:23:52', '1069 BRICK HOUSE LANE', 38.0013425, 'Ky', -84.3989905)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:52', NULL, '2009-09-24 06:23:52', '2824 HANNA PLACE', 38.009859, 'Ky', -84.447711)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:53', NULL, '2009-09-24 06:23:53', '1359 STEPHEN FOSTER DRIVE', 37.9751139, 'Ky', -84.4817763)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:54', NULL, '2009-09-24 06:23:54', '864 GERARDI ROAD', 38.024067, 'Ky', -84.436069)[0m
+  [4;36;1mAddress Create (1.0ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:54', NULL, '2009-09-24 06:23:54', '724 WOODWARD LANE', 38.022182, 'Ky', -84.440633)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:55', NULL, '2009-09-24 06:23:55', '211 LOCUST AVENUE', 38.059945, 'Ky', -84.472653)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:55', NULL, '2009-09-24 06:23:55', '594 PLAINVIEW ROAD', 37.9971213, 'Ky', -84.4600693)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:56', NULL, '2009-09-24 06:23:56', '1294 MERMAN DRIVE', 37.97652, 'Ky', -84.483129)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:56', NULL, '2009-09-24 06:23:56', '165 ST. JAMES DRIVE', 38.021366, 'Ky', -84.463066)[0m
+  [4;35;1mAddress Create (0.8ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:57', NULL, '2009-09-24 06:23:57', '921 LIBERTY ROAD', 38.0415387, 'Ky', -84.4696024)[0m
+  [4;36;1mAddress Create (0.8ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:57', NULL, '2009-09-24 06:23:57', '1225 MORNING SIDE DRIVE', 38.009108, 'Ky', -84.40563)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:58', NULL, '2009-09-24 06:23:58', '629 DARTMOOR DRIVE', 38.053979, 'Ky', -84.454506)[0m
+  [4;36;1mAddress Create (1.0ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:59', NULL, '2009-09-24 06:23:59', '3630 WHITE PINE DRIVE', 37.978706, 'Ky', -84.545294)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:23:59', NULL, '2009-09-24 06:23:59', '1583 HALSTED COURT', 38.077735, 'Ky', -84.47738)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:00', NULL, '2009-09-24 06:24:00', '104 RED CEDAR COURT', 38.083066, 'Ky', -84.550606)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:00', NULL, '2009-09-24 06:24:00', '1420 JANDYMAR COURT', 37.977255, 'Ky', -84.46663)[0m
+  [4;36;1mAddress Create (1.0ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:01', NULL, '2009-09-24 06:24:01', '1893 MILLBANK ROAD', 38.0844984, 'Ky', -84.4713698)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:01', NULL, '2009-09-24 06:24:01', '408 BAINBRIDGE COURT #6', 38.005519, 'Ky', -84.427925)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:02', NULL, '2009-09-24 06:24:02', '1191 VENETIAN WAY', 37.980344, 'Ky', -84.484471)[0m
+  [4;35;1mAddress Create (0.8ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:02', NULL, '2009-09-24 06:24:02', '424 PRICE ROAD', 38.0682644, 'Ky', -84.5082895)[0m
+  [4;36;1mAddress Create (1.0ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:03', NULL, '2009-09-24 06:24:03', '132 HENTON ROAD', 38.058656, 'Ky', -84.516299)[0m
+  [4;35;1mAddress Create (0.8ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:03', NULL, '2009-09-24 06:24:03', '443 ASH STREET', 38.064214, 'Ky', -84.504401)[0m
+  [4;36;1mAddress Create (0.9ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:04', NULL, '2009-09-24 06:24:04', '632 N. UPPER STREET', 38.05503, 'Ky', -84.486149)[0m
+  [4;35;1mAddress Create (1.4ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:05', NULL, '2009-09-24 06:24:05', '280 E. LOUDON AVENUE', 38.0536522, 'Ky', -84.4775458)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:05', NULL, '2009-09-24 06:24:05', '1244 EMBRY AVENUE', 38.047165, 'Ky', -84.520227)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:06', NULL, '2009-09-24 06:24:06', '109 AND 111 FORSTON AVENUE', 38.039696, 'Ky', -84.455081)[0m
+  [4;36;1mAddress Create (1.1ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:06', NULL, '2009-09-24 06:24:06', '3403 TISHOFF COURT', 37.993725, 'Ky', -84.490262)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:07', NULL, '2009-09-24 06:24:07', '1808 VERSAILLES ROAD', 38.047841, 'Ky', -84.537586)[0m
+  [4;36;1mAddress Create (0.8ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:07', NULL, '2009-09-24 06:24:07', '2256 SPURR ROAD', 38.10388, 'Ky', -84.508846)[0m
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:08', NULL, '2009-09-24 06:24:08', '1239 WINBURN DRIVE', 38.087353, 'Ky', -84.470949)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:08', NULL, '2009-09-24 06:24:08', '231 SUTTON PLACE', 38.056219, 'Ky', -84.540473)[0m
+  [4;35;1mAddress Create (0.8ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:09', NULL, '2009-09-24 06:24:09', '184 SHERMAN AVENUE', 38.030711, 'Ky', -84.4743)[0m
+  [4;36;1mAddress Create (1.0ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:09', NULL, '2009-09-24 06:24:09', '1117 GRIFFIN GATE DRIVE', 38.084306, 'Ky', -84.483472)[0m
+  [4;35;1mAddress Create (0.8ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:10', NULL, '2009-09-24 06:24:10', '690 BROOKGREEN LANE', 37.997767, 'Ky', -84.414887)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:10', NULL, '2009-09-24 06:24:10', '115 WABASH DRIVE', 38.016029, 'Ky', -84.517341)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:11', NULL, '2009-09-24 06:24:11', '660 HUGGING BEAR DRIVE', 38.018511, 'Ky', -84.438632)[0m
+  [4;36;1mAddress Create (4.8ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:12', NULL, '2009-09-24 06:24:12', '1636 SUMMERHILL DRIVE', 37.96942, 'Ky', -84.462401)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:12', NULL, '2009-09-24 06:24:12', '4225 CLEMENS DRIVE', 37.991383, 'Ky', -84.577014)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:13', NULL, '2009-09-24 06:24:13', '3377 SQUIRE CREEK WAY', 37.973186, 'Ky', -84.461225)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:13', NULL, '2009-09-24 06:24:13', '622 HYDEN COURT', 38.084055, 'Ky', -84.465133)[0m
+  [4;36;1mAddress Create (0.9ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:14', NULL, '2009-09-24 06:24:14', '726 DAKOTA STREET', 38.057558, 'Ky', -84.485283)[0m
+  [4;35;1mAddress Create (0.8ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:14', NULL, '2009-09-24 06:24:14', '2796 MICHELLE PARK', 38.088756, 'Ky', -84.547222)[0m
+  [4;36;1mAddress Create (1.1ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:15', NULL, '2009-09-24 06:24:15', '1020 PATRICIA LANE', 38.090249, 'Ky', -84.510069)[0m
+  [4;35;1mAddress Create (0.8ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:15', NULL, '2009-09-24 06:24:15', '4865 & 4909 TATES CREEK ROAD', 37.750937, 'Ky', -84.302558)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:16', NULL, '2009-09-24 06:24:16', '2754 BAYBROOK ROAD', 37.999706, 'Ky', -84.460462)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:16', NULL, '2009-09-24 06:24:16', '4301 WATERTRACE COURT', 37.96474, 'Ky', -84.510515)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:17', NULL, '2009-09-24 06:24:17', '3401-B TISHOFF COURT', 37.993779, 'Ky', -84.490132)[0m
+  [4;35;1mAddress Create (0.8ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:18', NULL, '2009-09-24 06:24:18', '122 LOCUST AVENUE', 38.060878, 'Ky', -84.474415)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:18', NULL, '2009-09-24 06:24:18', '865 GERARDI ROAD', 38.024507, 'Ky', -84.436563)[0m
+  [4;35;1mAddress Create (0.9ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:19', NULL, '2009-09-24 06:24:19', '1413 RITCHIE COURT', 38.007528, 'Ky', -84.550577)[0m
+  [4;36;1mAddress Create (0.9ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:19', NULL, '2009-09-24 06:24:19', '3204 PACKANACK COURT', 37.988472, 'Ky', -84.456397)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:20', NULL, '2009-09-24 06:24:20', '997 BRYAN AVENUE', 38.057091, 'Ky', -84.475037)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:20', NULL, '2009-09-24 06:24:20', '1412 SADDLE CLUB WAY', 38.048049, 'Ky', -84.560271)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:21', NULL, '2009-09-24 06:24:21', '622 WALDO WAY', 38.081573, 'Ky', -84.467643)[0m
+  [4;36;1mAddress Create (0.9ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:22', NULL, '2009-09-24 06:24:22', '1200 MORNING SIDE DRIVE AKA 1296 PLEASANT RIDGE DRIVE', 38.0082611, 'Ky', -84.4062121)[0m
+  [4;35;1mAddress Create (0.9ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:22', NULL, '2009-09-24 06:24:22', '2151 CHRISTIAN ROAD', 38.0290194, 'Ky', -84.4505105)[0m
+  [4;36;1mAddress Create (0.8ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:23', NULL, '2009-09-24 06:24:23', '2561 PASCOLI PLACE AKA 2572 CARDUCCI STREET', 38.0354649, 'Ky', -84.4273614)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:23', NULL, '2009-09-24 06:24:23', '417 LARKWOOD DRIVE', 38.015, 'Ky', -84.443469)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:24', NULL, '2009-09-24 06:24:24', '3205 AQUEDUCT DRIVE', 37.993321, 'Ky', -84.466196)[0m
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:24', NULL, '2009-09-24 06:24:24', '1814 BALFOUR DRIVE', 38.089282, 'Ky', -84.483881)[0m
+  [4;36;1mAddress Create (1.1ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:25', NULL, '2009-09-24 06:24:25', '603 JUDY LANE', 38.083889, 'Ky', -84.458615)[0m
+  [4;35;1mAddress Create (0.9ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:25', NULL, '2009-09-24 06:24:25', '441 HOLLOW CREEK ROAD', 38.073996, 'Ky', -84.4769354)[0m
+  [4;36;1mAddress Create (0.9ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:26', NULL, '2009-09-24 06:24:26', '2505 LANGSTANE LANE', 38.104563, 'Ky', -84.509449)[0m
+  [4;35;1mAddress Create (0.8ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:27', NULL, '2009-09-24 06:24:27', '133 SHAWNEE PLACE', 38.021631, 'Ky', -84.511141)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:27', NULL, '2009-09-24 06:24:27', '555 ST. ANTHONY DRIVE', 38.060669, 'Ky', -84.448969)[0m
+  [4;35;1mAddress Create (0.9ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:28', NULL, '2009-09-24 06:24:28', '407 ASH STREET', 38.063744, 'Ky', -84.505513)[0m
+  [4;36;1mAddress Create (0.7ms)[0m   [0;1mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', NULL, '2009-09-24 06:24:28', NULL, '2009-09-24 06:24:28', '1902 DEAUVILLE ROAD', 38.050164, 'Ky', -84.543024)[0m
+Rendering template within layouts/websites
+Rendering websites/fayette_mc
+Completed in 119956ms (View: 6, DB: 182) | 200 OK [http://localhost/websites/fayette_mc]
+
+
+Processing AddressesController#index (for 127.0.0.1 at 2009-09-24 02:24:28) [GET]
+  [4;35;1mAddress Load (364.7ms)[0m   [0mSELECT * FROM "addresses" [0m
+Rendering template within layouts/addresses
+Rendering addresses/index
+Completed in 1286ms (View: 825, DB: 365) | 200 OK [http://localhost/]
+
+
+Processing AddressesController#index (for 127.0.0.1 at 2009-09-24 02:24:35) [GET]
+  [4;36;1mAddress Load (139.0ms)[0m   [0;1mSELECT * FROM "addresses" [0m
+Rendering template within layouts/addresses
+Rendering addresses/index
+Completed in 1038ms (View: 808, DB: 139) | 200 OK [http://localhost/]
+
+
+Processing AddressesController#destroy (for 127.0.0.1 at 2009-09-24 02:25:33) [DELETE]
+  Parameters: {"authenticity_token"=>"HIzGVcHyflVQZwMKZs5ME98MGjKzvYfm9s/sBnSLhu8=", "id"=>"6"}
+  [4;35;1mAddress Load (1.8ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses"."id" = 6) [0m
+  [4;36;1mAddress Destroy (0.8ms)[0m   [0;1mDELETE FROM "addresses" WHERE "id" = 6[0m
+Redirected to http://localhost:3000/addresses
+Completed in 59ms (DB: 3) | 302 Found [http://localhost/addresses/6]
+
+
+Processing AddressesController#index (for 127.0.0.1 at 2009-09-24 02:25:34) [GET]
+  [4;35;1mAddress Load (123.9ms)[0m   [0mSELECT * FROM "addresses" [0m
+Rendering template within layouts/addresses
+Rendering addresses/index
+Completed in 1128ms (View: 925, DB: 124) | 200 OK [http://localhost/addresses]
+
+
+Processing AddressesController#destroy (for 127.0.0.1 at 2009-09-24 02:25:48) [DELETE]
+  Parameters: {"authenticity_token"=>"HIzGVcHyflVQZwMKZs5ME98MGjKzvYfm9s/sBnSLhu8=", "id"=>"7"}
+  [4;36;1mAddress Load (2.5ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 7) [0m
+  [4;35;1mAddress Destroy (0.7ms)[0m   [0mDELETE FROM "addresses" WHERE "id" = 7[0m
+Redirected to http://localhost:3000/addresses
+Completed in 57ms (DB: 3) | 302 Found [http://localhost/addresses/7]
+
+
+Processing AddressesController#index (for 127.0.0.1 at 2009-09-24 02:25:48) [GET]
+  [4;36;1mAddress Load (130.5ms)[0m   [0;1mSELECT * FROM "addresses" [0m
+Rendering template within layouts/addresses
+Rendering addresses/index
+Completed in 1089ms (View: 877, DB: 130) | 200 OK [http://localhost/addresses]

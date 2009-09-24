@@ -1,4 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
+
+  map.connect "websites/fayette_mc",
+    :controller => "websites",
+    :action => "fayette_mc"
+
+  map.resources :websites
   map.resources :addresses
 
   # The priority is based upon order of creation: first created -> highest priority.

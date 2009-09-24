@@ -1,0 +1,22 @@
+<h1>Listing websites</h1>
+
+<table>
+  <tr>
+    <th>Webaddress</th>
+    <th>Parse info</th>
+  </tr>
+
+<% @websites.each do |website| %>
+  <tr>
+    <td><%=h website.webaddress %></td>
+    <td><%=h website.parse_info %></td>
+    <td><%= link_to 'Show', website %></td>
+    <td><%= link_to 'Edit', edit_website_path(website) %></td>
+    <td><%= link_to 'Destroy', website, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New website', new_website_path %>

@@ -1,0 +1,13 @@
+<p>
+  <b>Webaddress:</b>
+  <%=h @website.webaddress %>
+</p>
+
+<p>
+  <b>Parse info:</b>
+  <%=h @website.parse_info %>
+</p>
+
+
+<%= link_to 'Edit', edit_website_path(@website) %> |
+<%= link_to 'Back', websites_path %>
