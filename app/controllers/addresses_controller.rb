@@ -2,6 +2,7 @@ class AddressesController < ApplicationController
   # GET /addresses
   # GET /addresses.xml
   def index
+    @city_center = "38.041968, -84.503795"
     @addresses = Address.all
 
     respond_to do |format|
