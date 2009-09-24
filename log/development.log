@@ -591,3 +591,214 @@ Processing AddressesController#index (for 127.0.0.1 at 2009-09-24 01:40:07) [GET
 Rendering template within layouts/addresses
 Rendering addresses/index
 Completed in 63ms (View: 35, DB: 5) | 200 OK [http://localhost/addresses]
+
+
+Processing AddressesController#index (for 127.0.0.1 at 2009-09-24 01:43:56) [GET]
+  [4;35;1mAddress Load (4.8ms)[0m   [0mSELECT * FROM "addresses" [0m
+Rendering template within layouts/addresses
+Rendering addresses/index
+
+ActionView::TemplateError (undefined local variable or method `street_line_2' for #<Address:0xb6146458>) on line #27 of app/views/layouts/addresses.html.erb:
+24: var houses = [
+25: <% x = 1 %>
+26: <% @addresses.each do |address| %>
+27:   <%= ', ' if x > 1 %>['<%= address.full_address%>', <%= address.lat %>, <%= address.long %>, <%= x %>]
+28:   <% x+=1 %>
+29: <% end if !@addresses.nil? %>
+30: ];
+
+    app/models/address.rb:8:in `full_address'
+    app/views/layouts/addresses.html.erb:27
+    app/views/layouts/addresses.html.erb:26:in `each'
+    app/views/layouts/addresses.html.erb:26
+    app/controllers/addresses_controller.rb:8:in `index'
+
+Rendered rescues/_trace (192.8ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AddressesController#index (for 127.0.0.1 at 2009-09-24 01:44:27) [GET]
+  [4;36;1mAddress Load (5.1ms)[0m   [0;1mSELECT * FROM "addresses" [0m
+Rendering template within layouts/addresses
+Rendering addresses/index
+Completed in 73ms (View: 42, DB: 5) | 200 OK [http://localhost/addresses]
+
+
+Processing AddressesController#index (for 127.0.0.1 at 2009-09-24 01:45:24) [GET]
+  [4;35;1mAddress Load (4.0ms)[0m   [0mSELECT * FROM "addresses" [0m
+Rendering template within layouts/addresses
+Rendering addresses/index
+Completed in 149ms (View: 28, DB: 4) | 200 OK [http://localhost/addresses]
+
+
+Processing AddressesController#destroy (for 127.0.0.1 at 2009-09-24 01:47:51) [DELETE]
+  Parameters: {"authenticity_token"=>"HIzGVcHyflVQZwMKZs5ME98MGjKzvYfm9s/sBnSLhu8=", "id"=>"1"}
+  [4;36;1mAddress Load (1.9ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 1) [0m
+  [4;35;1mAddress Destroy (0.9ms)[0m   [0mDELETE FROM "addresses" WHERE "id" = 1[0m
+Redirected to http://localhost:3000/addresses
+Completed in 56ms (DB: 3) | 302 Found [http://localhost/addresses/1]
+
+
+Processing AddressesController#index (for 127.0.0.1 at 2009-09-24 01:47:51) [GET]
+  [4;36;1mAddress Load (5.0ms)[0m   [0;1mSELECT * FROM "addresses" [0m
+Rendering template within layouts/addresses
+Rendering addresses/index
+Completed in 67ms (View: 33, DB: 5) | 200 OK [http://localhost/addresses]
+
+
+Processing AddressesController#new (for 127.0.0.1 at 2009-09-24 01:47:55) [GET]
+Rendering template within layouts/addresses
+Rendering addresses/new
+Completed in 52ms (View: 20, DB: 0) | 200 OK [http://localhost/addresses/new]
+
+
+Processing AddressesController#create (for 127.0.0.1 at 2009-09-24 01:48:06) [POST]
+  Parameters: {"address"=>{"city"=>"Lexington", "zip"=>"40509", "stree_line_2"=>"", "street_line_1"=>"645 morgan hills drive", "lat"=>"", "long"=>"", "state"=>"KY"}, "commit"=>"Create", "authenticity_token"=>"HIzGVcHyflVQZwMKZs5ME98MGjKzvYfm9s/sBnSLhu8="}
+
+NoMethodError (undefined method `long' for #<Geokit::GeoLoc:0xb60c4c64>):
+  app/models/address.rb:18:in `find_lat_long'
+  app/controllers/addresses_controller.rb:47:in `create'
+  app/controllers/addresses_controller.rb:46:in `create'
+
+Rendered rescues/_trace (200.3ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AddressesController#create (for 127.0.0.1 at 2009-09-24 01:48:26) [POST]
+  Parameters: {"address"=>{"city"=>"Lexington", "zip"=>"40509", "stree_line_2"=>"", "street_line_1"=>"645 morgan hills drive", "lat"=>"", "long"=>"", "state"=>"KY"}, "commit"=>"Create", "authenticity_token"=>"HIzGVcHyflVQZwMKZs5ME98MGjKzvYfm9s/sBnSLhu8="}
+  [4;35;1mAddress Create (1.0ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', '40509', '2009-09-24 05:48:27', '', '2009-09-24 05:48:27', '645 morgan hills drive', '', 'KY', '')[0m
+Redirected to http://localhost:3000/addresses/5
+Completed in 590ms (DB: 1) | 302 Found [http://localhost/addresses]
+
+
+Processing AddressesController#show (for 127.0.0.1 at 2009-09-24 01:48:27) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mAddress Load (1.3ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 5) [0m
+Rendering template within layouts/addresses
+Rendering addresses/show
+Completed in 43ms (View: 9, DB: 1) | 200 OK [http://localhost/addresses/5]
+
+
+Processing AddressesController#index (for 127.0.0.1 at 2009-09-24 01:48:48) [GET]
+  [4;35;1mAddress Load (3.8ms)[0m   [0mSELECT * FROM "addresses" [0m
+Rendering template within layouts/addresses
+Rendering addresses/index
+Completed in 62ms (View: 33, DB: 4) | 200 OK [http://localhost/addresses]
+
+
+Processing AddressesController#destroy (for 127.0.0.1 at 2009-09-24 01:48:56) [DELETE]
+  Parameters: {"authenticity_token"=>"HIzGVcHyflVQZwMKZs5ME98MGjKzvYfm9s/sBnSLhu8=", "id"=>"5"}
+  [4;36;1mAddress Load (1.9ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 5) [0m
+  [4;35;1mAddress Destroy (0.8ms)[0m   [0mDELETE FROM "addresses" WHERE "id" = 5[0m
+Redirected to http://localhost:3000/addresses
+Completed in 57ms (DB: 3) | 302 Found [http://localhost/addresses/5]
+
+
+Processing AddressesController#index (for 127.0.0.1 at 2009-09-24 01:48:56) [GET]
+  [4;36;1mAddress Load (4.2ms)[0m   [0;1mSELECT * FROM "addresses" [0m
+Rendering template within layouts/addresses
+Rendering addresses/index
+Completed in 66ms (View: 33, DB: 4) | 200 OK [http://localhost/addresses]
+
+
+Processing AddressesController#new (for 127.0.0.1 at 2009-09-24 01:49:00) [GET]
+Rendering template within layouts/addresses
+Rendering addresses/new
+Completed in 51ms (View: 20, DB: 0) | 200 OK [http://localhost/addresses/new]
+
+
+Processing AddressesController#create (for 127.0.0.1 at 2009-09-24 01:49:10) [POST]
+  Parameters: {"address"=>{"city"=>"Lexington", "zip"=>"40509", "stree_line_2"=>"", "street_line_1"=>"645 morgan hills drive", "lat"=>"", "long"=>"", "state"=>"KY"}, "commit"=>"Create", "authenticity_token"=>"HIzGVcHyflVQZwMKZs5ME98MGjKzvYfm9s/sBnSLhu8="}
+  [4;35;1mAddress Create (0.7ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', '40509', '2009-09-24 05:49:10', '', '2009-09-24 05:49:10', '645 morgan hills drive', 38.022382, 'KY', -84.4443)[0m
+Redirected to http://localhost:3000/addresses/6
+Completed in 557ms (DB: 1) | 302 Found [http://localhost/addresses]
+
+
+Processing AddressesController#show (for 127.0.0.1 at 2009-09-24 01:49:10) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mAddress Load (1.2ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 6) [0m
+Rendering template within layouts/addresses
+Rendering addresses/show
+Completed in 43ms (View: 10, DB: 1) | 200 OK [http://localhost/addresses/6]
+
+
+Processing AddressesController#index (for 127.0.0.1 at 2009-09-24 01:49:15) [GET]
+  [4;35;1mAddress Load (3.3ms)[0m   [0mSELECT * FROM "addresses" [0m
+Rendering template within layouts/addresses
+Rendering addresses/index
+Completed in 61ms (View: 32, DB: 3) | 200 OK [http://localhost/addresses]
+
+
+Processing AddressesController#destroy (for 127.0.0.1 at 2009-09-24 01:49:26) [DELETE]
+  Parameters: {"authenticity_token"=>"HIzGVcHyflVQZwMKZs5ME98MGjKzvYfm9s/sBnSLhu8=", "id"=>"2"}
+  [4;36;1mAddress Load (2.6ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 2) [0m
+  [4;35;1mAddress Destroy (3.1ms)[0m   [0mDELETE FROM "addresses" WHERE "id" = 2[0m
+Redirected to http://localhost:3000/addresses
+Completed in 183ms (DB: 6) | 302 Found [http://localhost/addresses/2]
+
+
+Processing AddressesController#index (for 127.0.0.1 at 2009-09-24 01:49:26) [GET]
+  [4;36;1mAddress Load (3.6ms)[0m   [0;1mSELECT * FROM "addresses" [0m
+Rendering template within layouts/addresses
+Rendering addresses/index
+Completed in 67ms (View: 34, DB: 4) | 200 OK [http://localhost/addresses]
+
+
+Processing AddressesController#destroy (for 127.0.0.1 at 2009-09-24 01:49:32) [DELETE]
+  Parameters: {"authenticity_token"=>"HIzGVcHyflVQZwMKZs5ME98MGjKzvYfm9s/sBnSLhu8=", "id"=>"3"}
+  [4;35;1mAddress Load (2.0ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses"."id" = 3) [0m
+  [4;36;1mAddress Destroy (0.7ms)[0m   [0;1mDELETE FROM "addresses" WHERE "id" = 3[0m
+Redirected to http://localhost:3000/addresses
+Completed in 82ms (DB: 3) | 302 Found [http://localhost/addresses/3]
+
+
+Processing AddressesController#index (for 127.0.0.1 at 2009-09-24 01:49:32) [GET]
+  [4;35;1mAddress Load (3.5ms)[0m   [0mSELECT * FROM "addresses" [0m
+Rendering template within layouts/addresses
+Rendering addresses/index
+Completed in 68ms (View: 28, DB: 3) | 200 OK [http://localhost/addresses]
+
+
+Processing AddressesController#destroy (for 127.0.0.1 at 2009-09-24 01:49:37) [DELETE]
+  Parameters: {"authenticity_token"=>"HIzGVcHyflVQZwMKZs5ME98MGjKzvYfm9s/sBnSLhu8=", "id"=>"4"}
+  [4;36;1mAddress Load (2.0ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 4) [0m
+  [4;35;1mAddress Destroy (0.7ms)[0m   [0mDELETE FROM "addresses" WHERE "id" = 4[0m
+Redirected to http://localhost:3000/addresses
+Completed in 52ms (DB: 3) | 302 Found [http://localhost/addresses/4]
+
+
+Processing AddressesController#index (for 127.0.0.1 at 2009-09-24 01:49:37) [GET]
+  [4;36;1mAddress Load (2.5ms)[0m   [0;1mSELECT * FROM "addresses" [0m
+Rendering template within layouts/addresses
+Rendering addresses/index
+Completed in 86ms (View: 26, DB: 2) | 200 OK [http://localhost/addresses]
+
+
+Processing AddressesController#new (for 127.0.0.1 at 2009-09-24 01:50:01) [GET]
+Rendering template within layouts/addresses
+Rendering addresses/new
+Completed in 104ms (View: 53, DB: 0) | 200 OK [http://localhost/addresses/new]
+
+
+Processing AddressesController#create (for 127.0.0.1 at 2009-09-24 01:50:10) [POST]
+  Parameters: {"address"=>{"city"=>"Lexington", "zip"=>"", "stree_line_2"=>"", "street_line_1"=>" 3601 FOX FUN ROAD", "lat"=>"", "long"=>"", "state"=>"KY"}, "commit"=>"Create", "authenticity_token"=>"HIzGVcHyflVQZwMKZs5ME98MGjKzvYfm9s/sBnSLhu8="}
+  [4;35;1mAddress Create (0.8ms)[0m   [0mINSERT INTO "addresses" ("city", "zip", "created_at", "stree_line_2", "updated_at", "street_line_1", "lat", "state", "long") VALUES('Lexington', '', '2009-09-24 05:50:11', '', '2009-09-24 05:50:11', ' 3601 FOX FUN ROAD', 37.972443, 'KY', -84.488779)[0m
+Redirected to http://localhost:3000/addresses/7
+Completed in 560ms (DB: 1) | 302 Found [http://localhost/addresses]
+
+
+Processing AddressesController#show (for 127.0.0.1 at 2009-09-24 01:50:11) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mAddress Load (1.3ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 7) [0m
+Rendering template within layouts/addresses
+Rendering addresses/show
+Completed in 44ms (View: 12, DB: 1) | 200 OK [http://localhost/addresses/7]
+
+
+Processing AddressesController#index (for 127.0.0.1 at 2009-09-24 01:50:17) [GET]
+  [4;35;1mAddress Load (2.4ms)[0m   [0mSELECT * FROM "addresses" [0m
+Rendering template within layouts/addresses
+Rendering addresses/index
+Completed in 66ms (View: 25, DB: 2) | 200 OK [http://localhost/addresses]

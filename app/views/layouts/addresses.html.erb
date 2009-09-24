@@ -36,6 +36,8 @@ function setMarkers(map, locations) {
     var marker = new google.maps.Marker({
       position: myLatLng,
       map: map,
+      title: house[0],
+      zIndex: house[3]
     });
   }
 }
