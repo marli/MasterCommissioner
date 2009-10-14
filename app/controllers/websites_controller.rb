@@ -1,3 +1,7 @@
+# Board of Assessors:
+# Savannah = propertysales.chathamcounty.org
+# Charleston = http://www.charlestoncounty.org/foreclosure/runninglist.html
+
 class WebsitesController < ApplicationController
 require 'open-uri'
 require 'nokogiri'
