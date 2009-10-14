@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090924060602) do
+ActiveRecord::Schema.define(:version => 20091012221016) do
 
   create_table "addresses", :force => true do |t|
     t.string   "street_line_1"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(:version => 20090924060602) do
     t.string   "long"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "county"
+    t.string   "appraised_value"
+    t.string   "amount_due"
+    t.string   "sale_date"
+    t.boolean  "cancelled"
+    t.string   "winner"
+    t.string   "winning_bid"
+    t.string   "plaintiff"
+    t.string   "defendant"
   end
 
   create_table "websites", :force => true do |t|

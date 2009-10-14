@@ -2,9 +2,16 @@ class AddressesController < ApplicationController
   # GET /addresses
   # GET /addresses.xml
   def index
+    @county = params[:county] if ['Fayette', 'Jefferson'].include? params[:county]
     @city_center = "38.041968, -84.503795"
-    @addresses = Address.all
+    @city_center = @lexington   = "38.041968, -84.503795"  if (@county == 'Fayette')
+    @city_center = @louisville  = "38.235483, -85.729065" if (@county == 'Jefferson')
+    counter = 200
 
+    page = (params[:page] || 0).to_i*counter
+    @addresses = Address.all(:conditions => ["county = ? and cancelled = ?", params[:county], false], :offset => page, :limit => counter)
+    @page = page/counter
+    @page_limit = (Address.all(:conditions => ["county = ? and cancelled = ?", params[:county], false]).size/counter)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @addresses }

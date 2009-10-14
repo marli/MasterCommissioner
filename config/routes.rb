@@ -1,8 +1,15 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.connect "websites/fayette_mc",
+  map.connect "websites/fayette",
     :controller => "websites",
-    :action => "fayette_mc"
+    :action => "add_fayette_upcoming_sales"
+
+  map.connect "websites/past_sales",
+    :controller => "websites",
+    :action => "add_fayette_past_sales"
+
+  map.connect "websites/:action",
+    :controller => "websites"
 
   map.resources :websites
   map.resources :addresses

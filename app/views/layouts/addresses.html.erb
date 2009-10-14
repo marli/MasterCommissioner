@@ -5,6 +5,7 @@
 <title>Google Maps JavaScript API v3 Example: Complex Icons</title>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
+<%= stylesheet_link_tag 'scaffold' %>
 function initialize() {
 var myOptions = {
   zoom: 12,
@@ -24,7 +25,7 @@ var map = new google.maps.Map(document.getElementById("map_canvas"),
 var houses = [
 <% x = 1 %>
 <% @addresses.each do |address| %>
-  <%= ', ' if x > 1 %>['<%= address.full_address%>', <%= address.lat %>, <%= address.long %>, <%= x %>]
+  <%= ', ' if x > 1 %>['<%= address.full_address.to_s+" | "+address.sale_date.to_s+" | "+address.appraised_value.to_s %>', <%= address.lat %>, <%= address.long %>, <%= x %>]
   <% x+=1 %>
 <% end if !@addresses.nil? %>
 ];

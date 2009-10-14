@@ -2,7 +2,7 @@ class Address < ActiveRecord::Base
 
   require 'geokit'
 
-  before_create :find_lat_long
+  before_create :find_lat_long_and_zip
 
   def latlong
     "#{lat}, #{long}"
@@ -12,9 +12,14 @@ class Address < ActiveRecord::Base
     [street_line_1, city, state, zip].join(', ')
   end
 
-  def find_lat_long
+  private
+
+  def find_lat_long_and_zip
     address = Geokit::Geocoders::GoogleGeocoder.geocode full_address
     self.lat = address.lat
     self.long = address.lng
+    self.zip = address.zip
   end
+
 end
+
