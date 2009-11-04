@@ -40,4 +40,4 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
 end
 
-ActionController::AbstractRequest.relative_url_root = "/master_commissioner" if RAILS_ENV == 'production'
+ActionController::AbstractRequest.relative_url_root = "/master_commissioner"
