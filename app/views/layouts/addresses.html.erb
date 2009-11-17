@@ -25,7 +25,7 @@ var map = new google.maps.Map(document.getElementById("map_canvas"),
 var houses = [
 <% x = 1 %>
 <% @addresses.each do |address| %>
-  <%= ', ' if x > 1 %>['<%= address.full_address.to_s+" | "+address.sale_date.to_s+" | "+address.appraised_value.to_s %>', <%= address.lat %>, <%= address.long %>, <%= x %>]
+  <%= ', ' if x > 1 %>['<%= address.full_address.to_s+" | "+address.sale_date.to_s+" | appraisal "+address.appraised_value.to_s+" | owed "+address.amount_due.to_s%>', <%= address.lat %>, <%= address.long %>, <%= x %>]
   <% x+=1 %>
 <% end if !@addresses.nil? %>
 ];
