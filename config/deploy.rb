@@ -1,6 +1,7 @@
 set :application, "MasterCommissioner"
 set :user, "marlibau"
 set :branch, "master"
+set :chmod755, "app config db lib public vendor script script/* public/disp*"
 set :repository,  "git@github.com:marli/MasterCommissioner.git"
 set :domain, 'marlibau@marlibaumann.com'
 set :location, "marlibaumann.com"
