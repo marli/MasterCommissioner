@@ -9,6 +9,8 @@ set :deploy_via, :remote_cache
 set :scm_command, "~/git/bin/git"
 set :local_scm_command, "/usr/bin/git"
 set :use_sudo, false
+set :spinner, "false"
+set :runner, user
 
 set :scm, :git
 
