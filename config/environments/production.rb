@@ -10,7 +10,7 @@ config.action_controller.perform_caching             = true
 config.action_view.cache_template_loading            = true
 
 config.gem 'rack'
-config.gem 'nokogiri', :lib => '/home/marlibau/.gems/gems'
+config.gem 'nokogiri', :lib => '/home/marlibau/.gems/gems/nokogiri'
 config.gem 'geokit'
 
 # See everything in the log (default is :info)
