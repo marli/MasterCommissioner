@@ -1,5 +1,5 @@
 set :application, "MasterCommissioner"
-set :repository,  "~/repositories/MasterCommissioner.git"
+set :repository,  "git@github.com:marli/MasterCommissioner.git"
 set :domain, 'marlibau@marlibaumann.com'
 
 set :scm, :git
