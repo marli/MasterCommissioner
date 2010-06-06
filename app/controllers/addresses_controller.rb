@@ -6,10 +6,14 @@ class AddressesController < ApplicationController
     @city_center = "38.041968, -84.503795"
     @city_center = @lexington   = "38.041968, -84.503795"  if (@county == 'Fayette')
     @city_center = @louisville  = "38.235483, -85.729065" if (@county == 'Jefferson')
-    counter = 200
+    counter = 300
 
     page = (params[:page] || 0).to_i*counter
-    @addresses = Address.all(:conditions => ["county = ? and cancelled = ?", params[:county], false], :offset => page, :limit => counter)
+    @order = 'id'
+    if params[:sort_by] && Address.column_names.include?(params[:sort_by])
+      @order = params[:sort_by]
+    end
+    @addresses = Address.all(:conditions => ["county = ? and cancelled = false", params[:county]], :order => @order, :offset => page, :limit => counter)
     @page = page/counter
     @page_limit = (Address.all(:conditions => ["county = ? and cancelled = ?", params[:county], false]).size/counter)
     respond_to do |format|

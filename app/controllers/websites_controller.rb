@@ -1,6 +1,7 @@
 # Board of Assessors:
 # Savannah = propertysales.chathamcounty.org
 # Charleston = http://www.charlestoncounty.org/foreclosure/runninglist.html
+# http://www.jessaminemc.com/ Jessamine County
 
 class WebsitesController < ApplicationController
 require 'open-uri'
@@ -16,7 +17,7 @@ require 'nokogiri'
     doc.search('//p[@class="style39"]|//div[@class="style1"]/font/font').each do |text|
       appraisal = text.parent.children[7].to_s.split('Appraisal Amount: ')[1]
       appraisal = appraisal.split(' ')[0] if appraisal
-      (@appraisal = appraisal) if appraisal
+      (@appraisal = appraisal.gsub(/\$|,/,'').to_f) if appraisal
 
       text.parent.search('p').first.content.to_s
       @header = text.parent.search('p').first.content.to_s
@@ -27,8 +28,8 @@ require 'nokogiri'
       @defendant = @header[0] if @header
       @header = @header[1] if @header
       @header = @header.split('to raise the principal amount of ') if @header
-      @principal = @header[1].gsub(', together with interest, charges and costs).','') if @header
-      @principal == 'CANCELED' ? @canceled = true : @canceled = false
+      @principal = @header[1].gsub(', together with interest, charges and costs).','').gsub(/\$|,/,'').to_f if @header
+      @principal =~ /CANCELED/ ? @canceled = true : @canceled = false
       if text.name == 'p' && (text.content =~ Regexp.new(Date::MONTHNAMES.join('|').from(1), true))
         @date = text.content
       elsif text.name =='font'

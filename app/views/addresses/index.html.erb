@@ -7,6 +7,23 @@
 
 <table>
   <tr>
+    <th><%= link_to('Street line 1', :sort_by => 'street_line_1') %></th>
+    <th>Stree line 2</th>
+    <th>City</th>
+    <th>State</th>
+    <th><%= link_to('Zip', :sort_by => 'zip') %></th>
+    <th><%= link_to('Appraised Value', :page => @page, :county => @county, :sort_by => 'appraised_value') %></th>
+    <th>Amount Due</th>
+    <th>Plaintiff</th>
+    <th>Defendant</th>
+    <th>Sale Date</th>
+  </tr>
+
+  <% @addresses.each do |address| %>
+    <tr>
+      <td colspan='10'><%= image_tag("http://www.faycom.info/properties/#{address.case_number}.JPG", :width => 400) %></td>
+    </tr>
+  <tr>
     <th>Street line 1</th>
     <th>Stree line 2</th>
     <th>City</th>
@@ -18,22 +35,18 @@
     <th>Defendant</th>
     <th>Sale Date</th>
   </tr>
-
-<% @addresses.each do |address| %>
-  <tr>
+  <tr class="success_<%= address.success %>" <%= "style='color:red;'" unless address.success %>
+    <%= "style='color:green'" if address.zip =~ /40502|40507|40508/ %>>
     <td><%=h address.street_line_1 %></td>
     <td><%=h address.stree_line_2 %></td>
     <td><%=h address.city %></td>
     <td><%=h address.state %></td>
     <td><%=h address.zip %></td>
-    <td><%=h address.appraised_value %></td>
+    <td><%=h number_to_currency(address.appraised_value) %></td>
     <td><%=h address.amount_due %></td>
     <td><%=h address.plaintiff %></td>
     <td><%=h address.defendant %></td>
     <td><%=h address.sale_date %></td>
-    <td><%# link_to 'Show', address %></td>
-    <td><%# link_to 'Edit', edit_address_path(address) %></td>
-    <td><%# link_to 'Destroy', address, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

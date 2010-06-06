@@ -9,6 +9,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resource :session
 
+  map.connect ":county",
+    :controller => "addresses",
+    :action => "index"
 
   map.connect "websites/fayette",
     :controller => "websites",
