@@ -1,5 +1,6 @@
 # General Apache options
 # AddHandler fcgid-script .fcgi
+AddHandler fcgid-script .fcgi
 AddHandler cgi-script .cgi
 # For security reasons, Option followsymlinks cannot be overridden.
 #Options +FollowSymLinks +ExecCGI
